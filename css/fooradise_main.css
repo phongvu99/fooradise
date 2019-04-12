@@ -1,0 +1,116 @@
+html {
+    font-size: 1rem;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .text-justify-sm {
+        text-align: justify;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .text-justify-md {
+        text-align: justify;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-justify-lg {
+        text-align: justify;
+    }
+}
+
+#logo {
+    text-align: center;
+    padding: 50px;
+}
+
+#banner {
+    width: 100%;
+    height: 25rem;
+    background: url(../images/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* -webkit: safari -moz: mozilla -o:opera*/
+    margin: 5rem 0;
+}
+
+div.show-on-hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown:hover>.dropdown-menu {
+    margin-top: 0;
+    display: block;
+}
+
+.navbar-nav>li {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Page content */
+.content {
+    margin-top: 5rem;
+    padding: 16px;
+}
+
+.navbar-nav>li>.dropdown-menu {
+    background: white;
+}
+
+.navbar-nav>li>.dropdown-menu>.dropdown-item:hover,
+.navbar-nav>li>.dropdown-menu>.dropdown-item:active {
+    background: #6190E8;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A7BFE8, #6190E8);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.carousel-item {
+    /* height: 100vh;
+    min-height: 350px; */
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.carousel-inner>.carousel-item>img {
+    width: 100%;
+    height: 40rem;
+}
+
+.carousel-control-prev-icon {
+    position: absolute;
+    left: 100px;
+}
+
+.carousel-control-next-icon {
+    position: absolute;
+    right: 100px;
+}
+
+#bg_main {
+    background: #642B73;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C6426E, #642B73);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C6426E, #642B73);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+div.content p {
+    padding: 0.5rem;
+}
