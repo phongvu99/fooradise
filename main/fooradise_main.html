@@ -7,67 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/fooradise_main.css">
     <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+        integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
+        crossorigin="anonymous"></script>
     <script src="../jquery/jquery-3.4.0.slim.min.js"></script>
     <script src="../bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
     <title>Fooradise</title>
 </head>
 
 <body>
-    <div id="logo">
-        LOGO HERE
-    </div>
-    <p>MODE 1: UNAVAILABLE</p>
-    <!-- <nav id="navbar">
-        <div class="dropdown btn-group btn-group-lg show-on-hover container">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                HOME
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-            </ul>
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                RECIPES
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-            </ul>
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                SUBMIT RECIPES
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-            </ul>
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                ABOUT
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-            </ul>
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                CONTACT
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-                <li><a class="dropdown-item" href="#">Lorem, ipsum.</a></li>
-            </ul>
+    <header>
+        <div id="logo">
+            LOGO HERE
         </div>
-    </nav> -->
-    <p>MODE 2:</p>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light" id="sticky_navbar">
+        <div class="d-flex justify-content-center justify-content-lg-end p-0 p-lg-4" id="social-icons">
+            <a href="https://www.facebook.com/" type="button" class="btn btn-outline-primary btn-lg"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" type="button" class="btn btn-outline-primary btn-lg"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/" type="button" class="btn btn-outline-primary btn-lg"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/" type="button" class="btn btn-outline-primary btn-lg"><i
+                    class="fab fa-youtube"></i></a>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="sticky_navbar">
         <a class="navbar-brand" href="#">Possible Logo</a>
         <!--Navbar toggler button-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -108,8 +72,11 @@
             </form>
         </div>
     </nav>
-    <div id="banner"></div>
-    <div id="carouselExampleIndicators" class="carousel container slide p-0" data-ride="carousel">
+    <div class="d-flex justify-content-center align-items-center 
+    lead text-center text-lg-center text-light display-4" id="banner">
+        <p>Fooradise</p>
+    </div>
+    <div id="carouselExampleIndicators" class="container carousel slide p-0" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -117,29 +84,26 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
-            <div class="carousel-item active display-2">
-                <img class="d-block mx-auto"
-                    src="https://www.melaniecooks.com/wp-content/uploads/2011/06/lasagna-noodle.jpg" alt="Step 1">
+            <div class="carousel-item active">
+                <img class="carousel-img-fluid" src="../images/tasty.jpg" alt="Featured Image 1">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 class="display-4">Step 1</h2>
+                    <h2 class="display-4">Featured Image 1</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
             <div class="carousel-item">
-                <img class="d-block mx-auto"
-                    src="https://www.melaniecooks.com/wp-content/uploads/2011/06/meat-tomato-sauce.jpg" alt="Step 2">
+                <img class="carousel-img-fluid" src="../images/raspberry-2023404_1920.jpg" alt="Featured Image 2">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 class="display-4">Step 2</h2>
+                    <h2 class="display-4">Featured Image 2</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
             <div class="carousel-item">
-                <img class="d-block mx-auto" src="https://www.melaniecooks.com/wp-content/uploads/2011/06/lasagna1.jpg"
-                    alt="Step 3">
+                <img class="carousel-img-fluid" src="../images/background2.jpg" alt="Featured Image 3">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 class="display-4">Step 3</h2>
+                    <h2 class="display-4">Featured Image 3</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
@@ -155,26 +119,95 @@
         </a>
     </div>
     </div>
-    <div class="content" id="bg_main">
-        <div id="main">
-            <p class="lead text-justify-sm">Lasagna is a layered pasta dish. If you never made lasagna before, it can be
-                overwhelming to figure out how to assemble the lasagna layers. Here are the step-by-step instructions
-                how to make lasagna – with pictures!</p>
-            <p class="lead text-justify-sm">This is the step-by-step guide to lasagna making process. For the exact
-                recipe and proportions of
-                ingredients, go to Easy Meat Lasagna Recipe.</p>
-            <p class="lead text-justify-sm">Step 1 Of How To Make Lasagna: Boil Or Soak Lasagna Noodles</p>
-            <p class="lead text-justify-sm">Before assembling lasagna, you have to make lasagna noodles soft. You can
-                do it by either boiling lasagna noodles according to directions printed on their package, or you can
-                soak them in hot water. I prefer the soaking method since it’s much easier. Just put the lasagna noodles
-                in the baking dish, and fill with hot tap water. In 15 minutes, lasagna noodles will be soft without
-                boiling. See also: making no-boil lasagna.</p>
-            <p class="lead text-justify-sm">Cook chopped onion on a frying pan, add ground meat and cook through, then
-                add tomato sauce and add salt and pepper to taste.</p>
-            <p class="lead text-justify-sm">Pour just enough tomato sauce to coat the bottom of the baking dish:
-            </p>
-
+    <div class="container my-5 p-0 border border-primary">
+        <div class="row">
+            <div class="col-lg">
+                <a href="">
+                    <img class="img-fluid" src="../images/purple-690724_1920.jpg" alt="fooradise1">
+                </a>
+                    <p class="desc_content lead text-primary">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Molestiae,
+                    incidunt.</p>
+            </div>
+            <div class="col-lg">
+                <a href="">
+                    <img class="img-fluid" src="../images/sunset-1373171_1920.jpg" alt="fooradise1">
+                </a>
+                <p class="desc_content lead text-primary">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Molestiae,
+                    incidunt.</p>
+            </div>
+            <div class="col-lg">
+                <a href="">
+                    <img class="img-fluid" src="../images/galaxy-3608029_1920.jpg" alt="fooradise1">
+                </a>
+                <p class="desc_content lead text-primary">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Molestiae,
+                    incidunt.</p>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-lg">
+                <a href="">
+                    <img class="img-fluid" src="../images/snow-mountain-680722_1920.jpg" alt="fooradise1">
+                </a>
+                <p class="desc_content lead text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Molestiae,
+                    incidunt.</p>
+            </div>
+            <div class="col-lg">
+                <a href="">
+                    <img class="img-fluid" src="../images/yellowstone-national-park-1581879_1920.jpg" alt="fooradise1">
+                </a>
+                <p class="desc_content lead text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Molestiae,
+                    incidunt.</p>
+            </div>
+            <div class="col-lg">
+                <a href="">
+                    <img class="img-fluid" src="../images/yosemite-1771239_1920.jpg" alt="fooradise1">
+                </a>
+                <p class="desc_content lead text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Molestiae,
+                    incidunt.</p>
+            </div>
         </div>
+    </div>
+    <div class="container my-5 p-5 border border-secondary">
+        <p class="lead text-justify-sm">Lasagna is a layered pasta dish. If you never made lasagna before, it can be
+            overwhelming to figure out how to assemble the lasagna layers. Here are the step-by-step instructions
+            how to make lasagna – with pictures!</p>
+        <p class="lead text-justify-sm">This is the step-by-step guide to lasagna making process. For the exact
+            recipe and proportions of
+            ingredients, go to Easy Meat Lasagna Recipe.</p>
+        <p class="lead text-justify-sm">Step 1 Of How To Make Lasagna: Boil Or Soak Lasagna Noodles</p>
+        <p class="lead text-justify-sm">Before assembling lasagna, you have to make lasagna noodles soft. You can
+            do it by either boiling lasagna noodles according to directions printed on their package, or you can
+            soak them in hot water. I prefer the soaking method since it’s much easier. Just put the lasagna noodles
+            in the baking dish, and fill with hot tap water. In 15 minutes, lasagna noodles will be soft without
+            boiling. See also: making no-boil lasagna.</p>
+        <p class="lead text-justify-sm">Cook chopped onion on a frying pan, add ground meat and cook through, then
+            add tomato sauce and add salt and pepper to taste.</p>
+        <p class="lead text-justify-sm">Pour just enough tomato sauce to coat the bottom of the baking dish:
+        </p>
+    </div>
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        // Get the navbar
+        var navbar = document.getElementById("sticky_navbar");
+
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset >= sticky + 20) {
+                navbar.classList.add("bg-nav")
+            } else {
+                navbar.classList.remove("bg-nav");
+            }
+        } </script>
 
 </body>
 
