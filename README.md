@@ -5,7 +5,7 @@
 <h3> How to use this project: </h3>
 <ul>
   <li> Fork this repo to your device, doesn't matter if it's a PC, laptop or smartphone.</li>
-  <li> https://github.com/phongvu99/fooradise/blob/master/fooradise.zip <li>
+  <li> https://github.com/phongvu99/fooradise/blob/master/fooradise.zip </li>
   <li> Go to main folder.</li>
   <li> Open the fooradise_main.html file.</li>
   <li> Profit.</li>
