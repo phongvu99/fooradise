@@ -9,7 +9,6 @@
   <li> Open the fooradise_main.html file.</li>
   <li> Profit.</li>
 </ul>
-<br>
 <h3> Features: </h3>
 <ul>
   <li> Partial mobile compatible!</li>
