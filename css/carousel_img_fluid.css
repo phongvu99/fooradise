@@ -1,0 +1,20 @@
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .carousel-img-fluid {
+        height: 40rem;
+    }
+}
+
+/* Large devices (large desktops, 1200px and down) */
+@media (max-width: 1200px) {
+    .carousel-img-fluid {
+        height: 30rem;
+    }
+}
+
+/* Small devices (tablets, 420px and down) */
+@media (max-width: 420px) {
+    .carousel-img-fluid {
+        height: 12.5rem;
+    }
+}

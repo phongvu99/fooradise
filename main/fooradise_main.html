@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/fooradise_main.css">
+    <link rel="stylesheet" href="../css/carousel_img_fluid.css">
+    <link rel="stylesheet" href="../css/responsive_footer.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
     <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
         integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
@@ -20,7 +23,7 @@
         <div id="logo">
             LOGO HERE
         </div>
-        <div class="d-flex justify-content-center justify-content-lg-end p-0 p-lg-4" id="social-icons">
+        <div class="d-flex justify-content-center justify-content-lg-end p-4     p-lg-4" id="social-icons">
             <a href="https://www.facebook.com/" type="button" class="btn btn-outline-primary btn-lg"><i
                     class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/" type="button" class="btn btn-outline-primary btn-lg"><i
@@ -32,7 +35,7 @@
         </div>
     </header>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="sticky_navbar">
-        <a class="navbar-brand" href="#">Possible Logo</a>
+        <a class="navbar-brand" href="#">FOORADISE</a>
         <!--Navbar toggler button-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,17 +44,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOREM IPSUM<span class="sr-only">(homepage)</span></a>
+                    <a class="nav-link" href="#">HOME<span class="sr-only">(homepage)</span></a>
                     <!--sr stands for screen reader
                     for more informations: https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOREM IPSUM<span class="sr-only">(recipes)</span></a>
+                    <a class="nav-link" href="#">RECIPES<span class="sr-only">(recipes)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        LOREM IPSUM<span class="sr-only">(submit recipes)</span>
+                        SUBMIT RECIPES<span class="sr-only">(submit recipes)</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Lorem ipsum dolor sit.</a>
@@ -61,10 +64,10 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOREM IPSUM<span class="sr-only">(about)</span></a>
+                    <a class="nav-link" href="#">ABOUT US<span class="sr-only">(about)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOREM IPSUM<span class="sr-only">(contact)</span></a>
+                    <a class="nav-link" href="#">CONTACT<span class="sr-only">(contact)</span></a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -72,11 +75,9 @@
             </form>
         </div>
     </nav>
-    <div class="d-flex justify-content-center align-items-center 
-    lead text-center text-lg-center text-light display-4" id="banner">
-        <p>Fooradise</p>
-    </div>
-    <div id="carouselExampleIndicators" class="container carousel slide p-0" data-ride="carousel">
+    <div id="banner"></div>
+    <div id="carouselExampleIndicators" class="container carousel slide p-0 border-top border-primary pt-5"
+        data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -118,78 +119,246 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    </div>
-    <div class="container my-5 p-0 border border-primary">
-        <div class="row">
-            <div class="col-lg">
-                <a href="">
-                    <img class="img-fluid" src="../images/purple-690724_1920.jpg" alt="fooradise1">
-                </a>
-                    <p class="desc_content lead text-primary">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Molestiae,
-                    incidunt.</p>
+    <article class="text-white">
+        <div class="content container border-top border-primary  my-5 p-3">
+            <div class="lead display-4" id="recipe_title">Classic Lasagna Recipe</div>
+            <div class="my-3" id="editor">
+                <img class="img-fluid d-inline" src="../images/Lego.jpg" alt="editor" id="editor-icon">
+                <span class="display-5 ml-2" id="author">by Phong</span>
+                <span class="text-muted ml-1" id="date">April 15, 2019</span>
             </div>
-            <div class="col-lg">
-                <a href="">
-                    <img class="img-fluid" src="../images/sunset-1373171_1920.jpg" alt="fooradise1">
-                </a>
-                <p class="desc_content lead text-primary">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Molestiae,
-                    incidunt.</p>
-            </div>
-            <div class="col-lg">
-                <a href="">
-                    <img class="img-fluid" src="../images/galaxy-3608029_1920.jpg" alt="fooradise1">
-                </a>
-                <p class="desc_content lead text-primary">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Molestiae,
-                    incidunt.</p>
-            </div>
-            <div class="w-100"></div>
-            <div class="col-lg">
-                <a href="">
-                    <img class="img-fluid" src="../images/snow-mountain-680722_1920.jpg" alt="fooradise1">
-                </a>
-                <p class="desc_content lead text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Molestiae,
-                    incidunt.</p>
-            </div>
-            <div class="col-lg">
-                <a href="">
-                    <img class="img-fluid" src="../images/yellowstone-national-park-1581879_1920.jpg" alt="fooradise1">
-                </a>
-                <p class="desc_content lead text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Molestiae,
-                    incidunt.</p>
-            </div>
-            <div class="col-lg">
-                <a href="">
-                    <img class="img-fluid" src="../images/yosemite-1771239_1920.jpg" alt="fooradise1">
-                </a>
-                <p class="desc_content lead text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Molestiae,
-                    incidunt.</p>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg lead text-justify-sm">
+                        <p class="display-4">Ingredients</p>
+                        <ul class="list-unstyled">
+                            <li>3/4 lb lasagna noodles</li>
+                            <li>1 tsp. extra-virgin olive oil, plus more for drizzling</li>
+                            <li>1 lb. ground beef</li>
+                            <li>2 cloves garlic, minced</li>
+                            <li> 1 tsp .dried oregano</li>
+                            <li>Kosher salt</li>
+                            <li>Freshly ground black pepper</li>
+                            <li>1 (32-0z.) jar marinara</li>
+                            <li>16 oz. whole milk ricotta</li>
+                            <li>1/2 c. freshly grated Parmesan, divided</li>
+                            <li>1/4 c. chopped parsley, plus more for garnish</li>
+                            <li>1/4 c. chopped parsley, plus more for garnish</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg lead text-justify-sm">
+                        <p class="display-4">Directions</p>
+                        <p>Preheat oven to 375º. In a large pot of salted boiling water, cook pasta according to package
+                            directions until al dente, less 2 minutes. Drain and drizzle a bit of olive oil to prevent
+                            noodles from sticking together. </p>
+                        <p>Meanwhile, in a large pot over medium-high heat, heat oil. Cook ground beef until no longer
+                            pink, breaking up with a wooden spoon, then drain fat. Return beef to skillet and add garlic
+                            and oregano and stir for 1 minute. Season with salt and pepper, then add marinara and stir
+                            until warmed through. </p>
+                        <p>Combine ricotta, 1/4 cup Parmesan, and parsley in a large mixing bowl and season with salt
+                            and pepper. Set aside.</p>
+                        <p>In a large casserole dish, spread a thin layer of meat sauce, a single layer of lasagna
+                            noodles, a layer of ricotta mixture, and a single layer of mozzarella, then repeat layers.
+                            Top last layer of noodles with meat sauce, Parmesan, and mozzarella. </p>
+                        <p>Cover with foil and bake for 15 minutes, then increase temperature to 400º and bake uncovered
+                            for 18 to 20 minutes. Garnish with parsley and serve. </p>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="container" id="disqus">
+            <div id="disqus_thread"></div>
+            <script>
+
+                /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+                var disqus_config = function () {
+                    this.page.url = 'http://127.0.0.1:5500/main/fooradise_main.html';  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = 'http://127.0.0.1:5500/main/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://fooradise.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by
+                    Disqus.</a></noscript>
+        </div>
+    </article>
+    <div class="container border-top border-primary">
+        <p class="lead text-monospace my-5 text-white text-center">Try out these recipes!</p>
     </div>
-    <div class="container my-5 p-5 border border-secondary">
-        <p class="lead text-justify-sm">Lasagna is a layered pasta dish. If you never made lasagna before, it can be
-            overwhelming to figure out how to assemble the lasagna layers. Here are the step-by-step instructions
-            how to make lasagna – with pictures!</p>
-        <p class="lead text-justify-sm">This is the step-by-step guide to lasagna making process. For the exact
-            recipe and proportions of
-            ingredients, go to Easy Meat Lasagna Recipe.</p>
-        <p class="lead text-justify-sm">Step 1 Of How To Make Lasagna: Boil Or Soak Lasagna Noodles</p>
-        <p class="lead text-justify-sm">Before assembling lasagna, you have to make lasagna noodles soft. You can
-            do it by either boiling lasagna noodles according to directions printed on their package, or you can
-            soak them in hot water. I prefer the soaking method since it’s much easier. Just put the lasagna noodles
-            in the baking dish, and fill with hot tap water. In 15 minutes, lasagna noodles will be soft without
-            boiling. See also: making no-boil lasagna.</p>
-        <p class="lead text-justify-sm">Cook chopped onion on a frying pan, add ground meat and cook through, then
-            add tomato sauce and add salt and pepper to taste.</p>
-        <p class="lead text-justify-sm">Pour just enough tomato sauce to coat the bottom of the baking dish:
-        </p>
-    </div>
+    <section>
+        <div class="container my-5 p-0">
+            <p class="lead my-5 text-white text-center border-top border-primary pt-5">Romantic Dinners</p>
+            <div class="card-deck">
+                <div class="card bg-danger text-white text-center shadow">
+                    <a href="https://tasty.co/compilation/romantic-chicken-dinner-for-two">
+                        <div class="inner">
+                            <img class="card-img-top"
+                                src="https://img.buzzfeed.com/video-api-prod/assets/9d66f125e6724bf890e367978119bb18/Facebook_Thumbnail.jpg"
+                                alt="Card image cap">
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Romantic Chicken Dinner for Two</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, sunt.</p>
+                        <a href="https://tasty.co/compilation/romantic-chicken-dinner-for-two"
+                            class="btn btn-outline-light">Do it now!</a>
+                    </div>
+                    <div class="card-footer">
+                        <small>by Matthew Johnson</small>
+                    </div>
+                </div>
+                <div class="card bg-danger text-white text-center shadow">
+                    <a href="https://tasty.co/compilation/chow-mein-4-ways">
+                        <div class="inner">
+                            <img class="card-img-top"
+                                src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/2319cec742834d548a1a8a7efd0c9f33/BFV43733_ChowMein4Ways_FB1080SQ.jpg"
+                                alt="Card image cap">
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Chow Mein 4 Ways</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, ab!.</p>
+                        <a href="https://tasty.co/compilation/chow-mein-4-ways" class="btn btn-outline-light">Do it
+                            now!</a>
+                    </div>
+                    <div class="card-footer">
+                        <small>by Claire Nolan</small>
+                    </div>
+                </div>
+                <div class="card bg-danger text-white text-center shadow">
+                    <a href="https://tasty.co/compilation/4-easy-instant-pot-dinners">
+                        <div class="inner">
+                            <img class="card-img-top"
+                                src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/137725.jpg"
+                                alt="Card image cap">
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">4 Easy Instant Pot Dinners</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, rem?</p>
+                        <a href="https://tasty.co/compilation/4-easy-instant-pot-dinners"
+                            class="btn btn-outline-light">Do
+                            it now!</a>
+                    </div>
+                    <div class="card-footer">
+                        <small>by Tiffany Lo</small>
+                    </div>
+                </div>
+            </div>
+            <p class="lead text-white my-5 text-center border-top border-primary pt-5">One-Pot Recipes</p>
+            <div class="card-deck">
+                <div class="card bg-danger text-white text-center shadow">
+                    <a href="https://tasty.co/compilation/veggie-rice-4-ways">
+                        <div class="inner">
+                            <img class="card-img-top"
+                                src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/23e01e482f524e0e9fc74fdfdc1e19db/BFV29238_VeggieRice4Ways_FB-Upload.jpg"
+                                alt="Card image cap">
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Veggie Rice 4 Ways</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia,
+                            assumenda.
+                        </p>
+                        <a href="https://tasty.co/compilation/veggie-rice-4-ways" class="btn btn-outline-light">Do it
+                            now!</a>
+                    </div>
+                    <div class="card-footer">
+                        <small>by Crystal Hatch</small>
+                    </div>
+                </div>
+                <div class="card bg-danger text-white text-center shadow">
+                    <a href="https://tasty.co/compilation/time-saving-sheet-pan-pancakes">
+                        <div class="inner">
+                            <img class="card-img-top"
+                                src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/97669.jpg"
+                                alt="Card image cap">
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">Time-Saving Sheet Pan Pancakes</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, eius.
+                        </p>
+                        <a href="https://tasty.co/compilation/time-saving-sheet-pan-pancakes"
+                            class="btn btn-outline-light">Do it now!</a>
+                    </div>
+                    <div class="card-footer">
+                        <small>by Claire Nolan</small>
+                    </div>
+                </div>
+                <div class="card bg-danger text-white text-center shadow">
+                    <a href="https://tasty.co/compilation/6-insanely-easy-fruit-cobblers">
+                        <div class="inner">
+                            <img class="card-img-top"
+                                src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/138247.jpg"
+                                alt="Card image cap">
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">6 Insanely Easy Fruit Cobblers</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+                            repudiandae.
+                        </p>
+                        <a href="https://tasty.co/compilation/6-insanely-easy-fruit-cobblers"
+                            class="btn btn-outline-light">Do it now!</a>
+                    </div>
+                    <div class="card-footer">
+                        <small>by Teddy Villa</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-classic text-white bg-dark p-3">
+        <div class="container p-0">
+            <div class="row">
+                <div class="col-md-4 col-lg-5">
+                    <div class="pr-xl-4"><a href="index.html"><img src="../images/pikachu_edited.jpg" alt="logo"
+                                width="160" height="auto" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                        <p>Look at me!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacts</h5>
+                    <dl class="contact-list">
+                        <dt>Address:</dt>
+                        <dd>Lorem ipsum dolor sit amet.</dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>Email:</dt>
+                        <dd><a href="mailto:phongvu99@outlook.com">phongvu99@outlook.com</a></dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>Phones:</dt>
+                        <dd><a href="tel:#">blah blah blah</a> or <a href="tel:#">blah blah blah</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h5>Links</h5>
+                    <ul class="nav-list list-unstyled">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-lg border-top border-light pt-4">
+                    <p class="text-center"> © 2019 Fooradise. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script>
         // When the user scrolls the page, execute myFunction
         window.onscroll = function () { myFunction() };

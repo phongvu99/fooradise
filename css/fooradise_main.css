@@ -2,6 +2,20 @@ html {
     font-size: 1rem;
 }
 
+body {
+    background: #AA076B;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #61045F, #AA076B);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #61045F, #AA076B);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@font-face {
+    font-family: bebas_neue;
+    src: url('../customfonts/BebasNeue-Regular.woff2');
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .text-justify-sm {
@@ -16,6 +30,7 @@ html {
     }
 }
 
+/* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .text-justify-lg {
         text-align: justify;
@@ -24,30 +39,29 @@ html {
 
 #logo {
     text-align: center;
-    padding: 50px;
+    margin-top: 100px;
 }
 
 #banner {
+    display: block;
     width: 100%;
-    height: 25rem;
+    height: 30rem;
     background: url(../images/background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* -webkit: safari -moz: mozilla -o:opera*/
     margin: 5rem 0;
-}
-
-div.show-on-hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* -webkit: safari -moz: mozilla -o:opera*/
 }
 
 .dropdown:hover>.dropdown-menu {
     margin-top: 0;
     display: block;
+}
+
+.navbar {
+    margin-top: 10rem
 }
 
 .navbar-nav>li {
@@ -57,10 +71,13 @@ div.show-on-hover {
     padding: 0.5rem 1rem;
 }
 
-/* Page content */
-.content {
-    margin-top: 5rem;
-    padding: 16px;
+.bg-nav {
+    background: #642B73;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C6426E, #642B73);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C6426E, #642B73);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .navbar-nav>li>.dropdown-menu {
@@ -77,40 +94,55 @@ div.show-on-hover {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.carousel-item {
-    /* height: 100vh;
-    min-height: 350px; */
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+/* Makes images fully responsive */
 
 .carousel-inner>.carousel-item>img {
+    display: block;
     width: 100%;
-    height: 40rem;
+    /* height: 40rem; */
 }
 
-.carousel-control-prev-icon {
+.carousel-caption {
+    background-color: rgba(0, 0, 0, .5);
     position: absolute;
-    left: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 0 0 10px 25px;
+    color: #fff;
+    text-align: left;
 }
 
-.carousel-control-next-icon {
-    position: absolute;
-    right: 100px;
+.inner {
+    overflow: hidden;
 }
 
-#bg_main {
-    background: #642B73;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #C6426E, #642B73);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #C6426E, #642B73);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.inner img {
+    transition: all 1.5s ease;
 }
 
-div.content p {
-    padding: 0.5rem;
+.inner:hover img {
+    transform: scale(1.2);
+}
+
+#recipe_title {
+    font-family: bebas_neue;
+}
+
+#editor-icon {
+    display: block;
+    border-radius: 1.25rem;
+    width: 40px;
+    height: 40px;
+}
+
+#author,
+#date,
+.content {
+    font-family: 'Lato', sans-serif;
+}
+
+#disqus {
+    background-color: white;
 }
