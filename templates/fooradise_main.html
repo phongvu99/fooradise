@@ -14,6 +14,7 @@
         integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
         crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename = 'jquery/jquery-3.4.0.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'script/fooradise_main.js') }}"></script>
     <script src="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js') }}"></script>
     <title>Fooradise</title>
 </head>
@@ -34,7 +35,7 @@
                     class="fab fa-youtube"></i></a>
         </div>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="sticky_navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="sticky_navbar">
         <a class="navbar-brand" href="#">FOORADISE</a>
         <!--Navbar toggler button-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -49,7 +50,7 @@
                     for more informations: https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">RECIPES<span class="sr-only">(recipes)</span></a>
+                    <a class="nav-link" id = "test" href="#">RECIPES<span class="sr-only">(recipes)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -123,7 +124,7 @@
         <div class="content container border-top border-primary  my-5 p-3">
             <div class="lead display-4" id="recipe_title">Classic Lasagna Recipe</div>
             <div class="my-3" id="editor">
-                <img class="img-fluid d-inline" src="../images/Lego.jpg" alt="editor" id="editor-icon">
+                <img class="img-fluid d-inline" src="{{ url_for('static', filename = 'images/Lego.jpg') }}" alt="editor" id="editor-icon">
                 <span class="display-5 ml-2" id="author">by Phong</span>
                 <span class="text-muted ml-1" id="date">April 15, 2019</span>
             </div>
@@ -146,7 +147,7 @@
                             <li>1/4 c. chopped parsley, plus more for garnish</li>
                         </ul>
                     </div>
-                    <div class="col-lg lead text-justify-sm">
+                    <div class="col-lg lead text-justify-sm" id = "test2">
                         <p class="display-4">Directions</p>
                         <p>Preheat oven to 375º. In a large pot of salted boiling water, cook pasta according to package
                             directions until al dente, less 2 minutes. Drain and drizzle a bit of olive oil to prevent
@@ -174,10 +175,10 @@
                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
-                var disqus_config = function () {
-                    this.page.url = 'http://127.0.0.1:5500/main/fooradise_main.html';  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = 'http://127.0.0.1:5500/main/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
+                // var disqus_config = function () {
+                //     this.page.url = 'http://127.0.0.1:5500/main/fooradise_main.html';  // Replace PAGE_URL with your page's canonical URL variable
+                //     this.page.identifier = 'http://127.0.0.1:5500/main/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                // };
 
                 (function () { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
@@ -324,7 +325,7 @@
                 <div class="col-md-4 col-lg-5">
                     <div class="pr-xl-4">
                         <a href="#">
-                            <img src="../images/pikachu_edited.jpg" alt="logo" width="160" height="auto">
+                            <img src="{{ url_for('static', filename = 'images/pikachu_edited.jpg') }}" alt="logo" width="160" height="auto">
                         </a>
                         <p>Look at me!</p>
                     </div>
