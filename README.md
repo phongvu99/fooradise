@@ -1,5 +1,5 @@
 # Fooradise - SE 2019
-<h2> Version: 0.2 (As of April 15, 2019).</h2>
+<h2> Version: 0.3 (As of April 18, 2019).</h2>
 <h2>This is fooradise, a project that starts out as a part of our final exam of the course Software Engineering at our school.</h2>
 <br>
 <h3> How to use this project: </h3>
@@ -24,6 +24,7 @@
   <li> HTML5</li>
   <li> CSS3</li>
   <li> Javascript </li>
-  <li> pSQL (will be implemented in the future) </li> 
+  <li> pSQL (will be implemented in the future) </li>
+  <li> Jinja2 </li>
 </ul>
 
