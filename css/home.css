@@ -1,35 +1,34 @@
-.content {
-    font-family: 'Lato', sans-serif;
+.test {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: auto;
 }
 
-#home_bg {
-    background: #3494E6;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #EC6EAD, #3494E6);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #EC6EAD, #3494E6);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    margin: 5rem 0 0 0;
-    /* -webkit: safari -moz: mozilla -o:opera*/
+.content {
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    bottom: 50%;
+    left: 0%;
+    width: 100%;
+    height: auto;
 }
 
 .vidContain {
     position: relative;
+    top: 0%;
+    left: 0%;
     width: 100%;
-    height: 46rem;
-
+    height: auto;
 }
 
-.vid {
-    position: absolute;
+video {
+    z-index: -1;
+    opacity: 0.78;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
+    height: auto;
+    overflow: hidden;
 }

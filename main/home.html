@@ -26,7 +26,7 @@
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-0" id="sticky_navbar">
         <a class="navbar-brand" href="#">FOORADISE</a>
-        <!--Navbar toggler button-->
+        <!-- Navbar toggler button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -62,23 +62,25 @@
             </ul>
         </div>
     </nav>
-    <div class="vidContain row container-fluid d-flex justify-content-center align-items-center text-center"
-        id="home_bg">
-        <form>
-            <div class="vid w-100">
-                <video autoplay loop muted poster="../images/tasty.jpg" id="background">
+    <div class="test mt-5">
+        <div class="content container-fluid p-0 p-sm-5 d-flex justify-content-center align-items-center text-center">
+            <form>
+                <label class="display-4 text-white" for="search.bar">Fooradise</label>
+                <input class="form-control text-center mt-3 mt-sm-2" id="search.bar" type="search" placeholder="Type something here or ..."
+                    aria-label="Search">
+                <a href="../main/recipe_template.html" class="btn btn-danger mt-3 mt-sm-4">Give me a a random
+                    recipe!</a>
+            </form>
+        </div>
+        <div class="vidContain">
+            <div class="vid">
+                <video autoplay loop muted poster="../images/tasty.jpg">
                     <source src="../videos/exe.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="col-lg content">
-                <label class="lead text-white display-4" for="search.bar">Fooradise</label>
-                <input class="form-control form-control-lg text-center" id="search.bar" type="search"
-                    placeholder="Recipes..." aria-label="Search">
-                <a href="" class="btn btn-danger mt-5">Give me a a random recipe!</a>
-            </div>
-        </form>
+        </div>
     </div>
-    <!-- <footer class="footer-classic text-white bg-dark p-3">
+    <footer class="footer-classic text-white p-3">
         <div class="container p-0">
             <div class="row">
                 <div class="col-md-4 col-lg-5">
@@ -130,7 +132,7 @@
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
     <script>
         // When the user scrolls the page, execute myFunction
         window.onscroll = function () { myFunction() };
