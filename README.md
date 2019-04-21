@@ -6,7 +6,7 @@
 http://fooradise.herokuapp.com/
 <h3> Features: </h3>
 <ul>
-  <li> Partial mobile compatible!</li>
+  <li> Mobile compatible!</li>
   <li> Partial accessibility (ARIA) </li>
   <li> Responsive design</li>
   <li> and more ...</li>
