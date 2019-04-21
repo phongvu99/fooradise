@@ -3,7 +3,7 @@
 <h2>This is fooradise, a project that starts out as a part of our final exam of the course Software Engineering at our school.</h2>
 <br>
 <h3> How to use this project: </h3>
-[fooradise](http://fooradise.herokuapp.com/)
+[fooradise] (http://fooradise.herokuapp.com/)
 <h3> Features: </h3>
 <ul>
   <li> Partial mobile compatible!</li>
