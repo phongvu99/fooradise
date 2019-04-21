@@ -2,8 +2,8 @@
 <h2> Version: 0.41 (As of April 21, 2019).</h2>
 <h2>This is fooradise, a project that starts out as a part of our final exam of the course Software Engineering at our school.</h2>
 <br>
-<h3> How to use this project: </h3>
-[fooradise] (http://fooradise.herokuapp.com/)
+# How to use the project:
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community Edition or ULTIMATE) (Doesn't matter which one you have). 
 <h3> Features: </h3>
 <ul>
   <li> Partial mobile compatible!</li>
