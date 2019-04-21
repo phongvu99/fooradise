@@ -1,5 +1,5 @@
 # Fooradise - SE 2019
-<h2> Version: 0.3 (As of April 18, 2019).</h2>
+<h2> Version: 0.41 (As of April 21, 2019).</h2>
 <h2>This is fooradise, a project that starts out as a part of our final exam of the course Software Engineering at our school.</h2>
 <br>
 <h3> How to use this project: </h3>
