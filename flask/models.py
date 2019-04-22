@@ -11,3 +11,7 @@ class Recipe(db.Model):
     yields = db.Column(db.String, nullable = False)
     url = db.Column(db.String, nullable = False)
     id = db.Column(db.Integer, primary_key=True)
+
+def step_handler(steps):
+    steps = steps.split("-")
+    return steps

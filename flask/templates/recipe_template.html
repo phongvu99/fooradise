@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/article.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/carousel.fluid.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/footer.css') }}">
-    <link rel="stylesheet" href=" url_for('static', filename = 'bootstrap-4.3.1-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/css/bootstrap.min.css') }}">
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
         integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
         crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename = 'jquery/jquery-3.4.0.slim.min.js') }}"></script>
     <script src="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js') }}"></script>
-    <title>Classic Lasagna Recipe-Fooradise</title>
+    <title>{{ this_recipe.name }}</title>
 </head>
 
 <body>
@@ -34,12 +34,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../main/home.html">HOME<span class="sr-only">(homepage)</span></a>
+                    <a class="nav-link" href="{{ url_for('index') }}">HOME<span class="sr-only">(homepage)</span></a>
                     <!--sr stands for screen reader
                     for more informations: https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../main/recipes.html">RECIPES<span class="sr-only">(recipes)</span></a>
+                    <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span class="sr-only">(recipes)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -75,9 +75,9 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img class="d-block w-100 carousel-img-fluid" src="../images/tasty.jpg" alt="Featured Image 1">
+                <img class="d-block w-100 carousel-img-fluid" src="{{ this_recipe.url }}" alt="{{this_recipe.name}}">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 class="display-4">Featured Image 1</h2>
+                    <h2 class="display-4">{{this_recipe.name}}</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
@@ -109,9 +109,9 @@
     </div>
     <article>
         <div class="content container text-white border-top border-primary my-5 p-3">
-            <div class="lead display-4" id="recipe_title">Classic Lasagna Recipe</div>
+            <div class="lead display-4" id="recipe_title">{{this_recipe.name}}</div>
             <div class="my-3" id="editor">
-                <img class="img-fluid d-inline" src="../images/Lego.jpg" alt="editor" id="editor-icon">
+                <img class="img-fluid d-inline" src="{{ url_for('static', filename = 'images/Lego.jpg') }}" alt="editor" id="editor-icon">
                 <span class="display-5 ml-2" id="author">by Phong</span>
                 <span class="text-muted ml-1" id="date">April 15, 2019</span>
             </div>
@@ -119,36 +119,14 @@
                 <div class="col-lg lead text-justify-sm">
                     <p class="display-4">Ingredients</p>
                     <ul class="list-unstyled">
-                        <li>3/4 lb lasagna noodles</li>
-                        <li>1 tsp. extra-virgin olive oil, plus more for drizzling</li>
-                        <li>1 lb. ground beef</li>
-                        <li>2 cloves garlic, minced</li>
-                        <li> 1 tsp .dried oregano</li>
-                        <li>Kosher salt</li>
-                        <li>Freshly ground black pepper</li>
-                        <li>1 (32-0z.) jar marinara</li>
-                        <li>16 oz. whole milk ricotta</li>
-                        <li>1/2 c. freshly grated Parmesan, divided</li>
-                        <li>1/4 c. chopped parsley, plus more for garnish</li>
-                        <li>1/4 c. chopped parsley, plus more for garnish</li>
+                      {% for i in this_steps %}
+                      <li>{{ i }}</li>
+                      {% endfor %}
                     </ul>
                 </div>
                 <div class="col-lg lead text-justify-sm">
                     <p class="display-4">Directions</p>
-                    <p>Preheat oven to 375º. In a large pot of salted boiling water, cook pasta according to package
-                        directions until al dente, less 2 minutes. Drain and drizzle a bit of olive oil to prevent
-                        noodles from sticking together. </p>
-                    <p>Meanwhile, in a large pot over medium-high heat, heat oil. Cook ground beef until no longer
-                        pink, breaking up with a wooden spoon, then drain fat. Return beef to skillet and add garlic
-                        and oregano and stir for 1 minute. Season with salt and pepper, then add marinara and stir
-                        until warmed through. </p>
-                    <p>Combine ricotta, 1/4 cup Parmesan, and parsley in a large mixing bowl and season with salt
-                        and pepper. Set aside.</p>
-                    <p>In a large casserole dish, spread a thin layer of meat sauce, a single layer of lasagna
-                        noodles, a layer of ricotta mixture, and a single layer of mozzarella, then repeat layers.
-                        Top last layer of noodles with meat sauce, Parmesan, and mozzarella. </p>
-                    <p>Cover with foil and bake for 15 minutes, then increase temperature to 400º and bake uncovered
-                        for 18 to 20 minutes. Garnish with parsley and serve. </p>
+                    {{ this_recipe.steps }}
                 </div>
             </div>
         </div>
@@ -310,7 +288,7 @@
                 <div class="col-md-4 col-lg-5">
                     <div class="pr-xl-4">
                         <a href="#">
-                            <img src="../images/tasty.jpg" alt="logo" width="160" height="auto">
+                            <img src="{{ url_for('static', filename = 'images/tasty.jpg') }}" alt="logo" width="160" height="auto">
                         </a>
                         <p>Look at me!</p>
                     </div>

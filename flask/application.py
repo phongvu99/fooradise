@@ -30,14 +30,27 @@ db = scoped_session(sessionmaker(bind=engine))
 def index():
     return render_template("home.html")
 
-@app.route("/test", methods = ["POST", "GET"])
-def test():
-    if request.method == "POST":
-        r = Recipe.query.first();
-        return jsonify({"success": True, "name":r.name, "ing":r.ingredients, "steps":r.steps})
-    else:
-        r = Recipe.query.first();
-        return r.ingredients
+# @app.route("/test", methods = ["POST", "GET"])
+# def test():
+#     if request.method == "POST":
+#         r = Recipe.query.first()
+#         return jsonify({"success": True, "name":r.name, "ing":r.ingredients, "steps":r.steps})
+#     else:
+#         r = Recipe.query.first()
+#         return r.ingredients
 
-@app.route("/recipes/<string:recipe_name>")
-def recipe(recipe_name)
+@app.route("/recipes")
+def recipes():
+    return render_template("recipes.html")
+
+@app.route("/recipes/<string:id>")
+def recipe(id):
+    try:
+        id = int(id)
+    except ValueError:
+        return ("Get the hell out of here")
+    r = Recipe.query.filter_by(id = id).first()
+    if r != None:
+        return render_template('recipe_template.html', this_recipe = r, this_steps = step_handler(r.ingredients))
+    else:
+        return ("Error: Invalid recipe")

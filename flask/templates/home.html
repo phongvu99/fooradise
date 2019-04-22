@@ -34,12 +34,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../main/home.html">HOME<span class="sr-only">(homepage)</span></a>
+                    <a class="nav-link" href="{{ url_for('index') }}">HOME<span class="sr-only">(homepage)</span></a>
                     <!--sr stands for screen reader
                     for more informations: https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../main/recipes.html">RECIPES<span class="sr-only">(recipes)</span></a>
+                    <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span class="sr-only">(recipes)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

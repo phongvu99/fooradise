@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/recipes.css">
-    <link rel="stylesheet" href="../css/carousel.fluid.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/recipes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/carousel.fluid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/css/bootstrap.min.css') }}">
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
         integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
         crossorigin="anonymous"></script>
-    <script src="../jquery/jquery-3.4.0.slim.min.js"></script>
-    <script src="../bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename = 'jquery/jquery-3.4.0.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js') }}"></script>
     <title>Recipes-Fooradise</title>
 </head>
 
@@ -34,12 +34,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../main/home.html">HOME<span class="sr-only">(homepage)</span></a>
+                    <a class="nav-link" href="{{ url_for('index') }}">HOME<span class="sr-only">(homepage)</span></a>
                     <!--sr stands for screen reader
                     for more informations: https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../main/recipes.html">RECIPES<span class="sr-only">(recipes)</span></a>
+                    <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span class="sr-only">(recipes)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -311,7 +311,7 @@
                 <div class="col-md-4 col-lg-5">
                     <div class="pr-xl-4">
                         <a href="#">
-                            <img src="../images/tasty.jpg" alt="logo" width="160" height="auto">
+                            <img src="{{ url_for('static', filename = 'images/tasty.jpg') }}" alt="logo" width="160" height="auto">
                         </a>
                         <p>Look at me!</p>
                     </div>
