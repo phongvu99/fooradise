@@ -1,1 +1,1 @@
-<?php header( 'Location: /flask/templates/home.html' ) ;  ?>
+<?php header( 'Location: /main/home.html' ) ;  ?>
