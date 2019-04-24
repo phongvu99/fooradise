@@ -29,7 +29,8 @@ db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
 def index():
-    return render_template("home.html")
+    r = Recipe.query.all()
+    return render_template("home.html", recipes_list = r)
 
 
 @app.route("/recipes")
@@ -53,3 +54,12 @@ def recipe(id):
 def random_recipe():
     r = random.choice(Recipe.query.all())
     return redirect("/recipes/"+ str(r.id))
+
+@app.route("/search", methods = ["POST"])
+def search_recipe():
+    recipe_name = request.form.get('name')
+    r = Recipe.query.filter_by(name = recipe_name).first()
+    if r != None:
+        return redirect("/recipes/"+str(r.id))
+    else:
+        return ("Error: Invalid recipe")
