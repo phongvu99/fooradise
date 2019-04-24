@@ -1,5 +1,6 @@
 import os
 import requests
+import random
 from models import *
 from flask import Flask, session,render_template, request, redirect, jsonify
 from flask_session import Session
@@ -30,14 +31,6 @@ db = scoped_session(sessionmaker(bind=engine))
 def index():
     return render_template("home.html")
 
-# @app.route("/test", methods = ["POST", "GET"])
-# def test():
-#     if request.method == "POST":
-#         r = Recipe.query.first()
-#         return jsonify({"success": True, "name":r.name, "ing":r.ingredients, "steps":r.steps})
-#     else:
-#         r = Recipe.query.first()
-#         return r.ingredients
 
 @app.route("/recipes")
 def recipes():
@@ -50,7 +43,13 @@ def recipe(id):
     except ValueError:
         return ("Get the hell out of here")
     r = Recipe.query.filter_by(id = id).first()
+    l = random.sample(Recipe.query.all(), 3)
     if r != None:
-        return render_template('recipe_template.html', this_recipe = r, this_steps = step_handler(r.ingredients))
+        return render_template('recipe_template.html', this_recipe = r, this_steps = step_handler(r.ingredients), random_recipes = l)
     else:
         return ("Error: Invalid recipe")
+
+@app.route("/random")
+def random_recipe():
+    r = random.choice(Recipe.query.all())
+    return redirect("/recipes/"+ str(r.id))

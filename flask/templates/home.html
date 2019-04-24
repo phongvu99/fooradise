@@ -68,7 +68,7 @@
                 <label class="display-4 text-white" for="search.bar">Fooradise</label>
                 <input class="form-control text-center mt-3 mt-sm-2" id="search.bar" type="search" placeholder="Type something here or ..."
                     aria-label="Search">
-                <a href="../main/recipe_template.html" class="btn btn-danger mt-3 mt-sm-4">Give me a random
+                <a href="{{ url_for('random_recipe') }}" class="btn btn-danger mt-3 mt-sm-4">Give me a random
                     recipe!</a>
             </form>
         </div>
