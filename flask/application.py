@@ -37,6 +37,10 @@ def index():
 def recipes():
     return render_template("recipes.html")
 
+@app.route("/submitRecipes")
+def submitRecipes():
+    return render_template("submitRecipes.html")
+
 @app.route("/recipes/<string:id>")
 def recipe(id):
     try:
