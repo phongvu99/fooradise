@@ -67,7 +67,7 @@
             <form action ="{{ url_for('search_recipe')}}", method = "post">
                 <label class="display-4 text-white" for="search.bar">Fooradise</label>
                 <input class="form-control text-center mt-3 mt-sm-2" id="search.bar" type="search" placeholder="Type something here or ..."
-                    aria-label="Search" list = "recipes_list" name="name">
+                    aria-label="Search" list = "recipes_list" name="name" onchange="this.form.submit()">
                     <datalist id ="recipes_list">
                       {% for i in recipes_list %}
                       <option value="{{ i.name }}"></option>
