@@ -2,208 +2,237 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/submitRecipes') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/footer.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/css/bootstrap.min.css') }}">
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
-        integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
-        crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename = 'jquery/jquery-3.4.0.slim.min.js') }}"></script>
-    <script src="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js') }}"></script>
-    <title>SubmitRecipes-Fooradise</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/home.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/submitRecipes') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'css/footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/css/bootstrap.min.css') }}">
+  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename = 'jquery/jquery-3.4.0.slim.min.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js') }}"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>SubmitRecipes-Fooradise</title>
 </head>
 
 <body>
-    <header>
-        <div class="text-white" id="logo">
-            <img class="img-fluid" src="{{ url_for('static', filename = 'images/logo.png') }}" alt="fooradise logo">
-        </div>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-0" id="sticky_navbar">
-        <a class="navbar-brand" href="#">FOORADISE</a>
-        <!-- Navbar toggler button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">HOME<span class="sr-only">(homepage)</span></a>
-                    <!--sr stands for screen reader
+  <header>
+    <div class="text-white" id="logo">
+      <img class="img-fluid" src="{{ url_for('static', filename = 'images/logo.png') }}" alt="fooradise logo">
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-0" id="sticky_navbar">
+    <a class="navbar-brand" href="#">FOORADISE</a>
+    <!-- Navbar toggler button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">HOME<span class="sr-only">(homepage)</span></a>
+          <!--sr stands for screen reader
                     for more informations: https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3-->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span
-                            class="sr-only">(recipes)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('submitRecipes') }}">
-                        SUBMIT RECIPES<span class="sr-only">(submit recipes)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ABOUT US<span class="sr-only">(about)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT<span class="sr-only">(contact)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- Button trigger modal -->
-    <div class="d-flex justify-content-center align-items-center m-5 p-4">
-        <button type="button" class="btn btn-danger p-4" data-toggle="modal" data-target="#submitModal">
-            Click here to submit your recipe!
-        </button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span class="sr-only">(recipes)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('submitRecipes') }}">
+            SUBMIT RECIPES<span class="sr-only">(submit recipes)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ABOUT US<span class="sr-only">(about)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACT<span class="sr-only">(contact)</span></a>
+        </li>
+      </ul>
     </div>
+  </nav>
+  <!-- Button trigger modal -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Submit Recipe!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+  <div style =" margin-left:10%; margin-right: 10%; margin-top:50px">
+    <form action="{{ url_for('submit') }}" method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1" style="color:white">Name of the dish</label>
+    <input type="text" class="form-control"  placeholder="Pigs with blah blah" name = "name">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1" style="color:white">Servings</label>
+    <input type="text" class="form-control"  placeholder="For 4 people" name = "yields">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2" style="color:white">Ingredients</label>
+    <textarea class="form-control" rows="3" name = "ingredients"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1" style="color:white">Instructions</label>
+    <textarea class="form-control" rows="5" name = "steps"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1" style="color:white">Image URL</label>
+    <input type="text" class="form-control"  placeholder="example.com" name = "url">
+  </div>
+  <div class="form-group">
+  <button type="submit" class ="btn btn-danger" >Submit</button>
+  </div>
+</form>
+  </div>
+
+  <!-- <div class="d-flex justify-content-center align-items-center m-5 p-4">
+    <button type="button" class="btn btn-danger p-4" data-toggle="modal" data-target="#submitModal">
+      Click here to submit your recipe!
+    </button>
+  </div>
+
+  <! Modal -->
+  <!-- <form  action="{{ url_for('submit') }}" method="post">
+    <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Submit Recipe!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputFName">First Name</label>
+                    <input type="text" class="form-control" id="inputFName" placeholder="John" name = "fisrt_name">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputLName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLName" placeholder="Doe" name = "last_name">
+                  </div>
                 </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputFName">First Name</label>
-                                    <input type="email" class="form-control" id="inputFName" placeholder="John">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputLName">Last Name</label>
-                                    <input type="password" class="form-control" id="inputLName" placeholder="Doe">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="steps">Difficulty</label>
-                                    <select id="steps" class="form-control">
-                                        <option selected>Easy</option>
-                                        <option>Medium</option>
-                                        <option>Hard</option>
-                                        <option>Dark Souls</option>
-                                        <option>Sekiro</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="steps">Servings</label>
-                                    <select id="steps" class="form-control">
-                                        <option selected>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>More than 4</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="instructions">Instructions</label>
-                                    <textarea class="form-control" name="instructions" id="instructions" cols="30"
-                                        rows="10" placeholder="This is how you make a classic lasagna!"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="uploadImage">Image</label>
-                                    <input type="file" class="form-control-file" id="uploadImage">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="steps">Difficulty</label>
+                    <select id="steps" class="form-control">
+                      <option selected>Easy</option>
+                      <option>Medium</option>
+                      <option>Hard</option>
+                      <option>Dark Souls</option>
+                      <option>Sekiro</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="steps">Servings</label>
+                    <select id="steps" class="form-control" name "yields">
+                      <option selected value="1">1</option>
+                      <option value= "2">2</option>
+                      <option value="3">3</option>
+                      <option value= "4">4</option>
+                      <option value = "More than 4">More than 4</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Submit!</button>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <textarea class="form-control" name="ingredients" id="ingredients" cols="10" rows="5" placeholder="Ingredients"></textarea>
+                  </div>
                 </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="instructions">Instructions</label>
+                    <textarea class="form-control" name="instructions" id="instructions" cols="30" rows="10" placeholder="This is how you make a classic lasagna!"></textarea>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="uploadImage" placeholder="Image URL"name= "url">
+                  </div>
+                </div>
+              </form>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type="submit" name="submit" value="Submit" class="btn btn-outline-primary">
+          </div>
         </div>
+      </div>
     </div>
-    <footer class="footer-classic text-white p-3">
-        <div class="container p-0">
-            <div class="row">
-                <div class="col-md-4 col-lg-5">
-                    <div class="pr-xl-4">
-                        <a href="#">
-                            <img src="{{ url_for('static', filename = 'images/tasty.jpg') }}" alt="logo" width="160"
-                                height="auto">
-                        </a>
-                        <p>Look at me!</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contacts</h5>
-                    <dl class="contact-list">
-                        <dt>Address:</dt>
-                        <dd>Lorem ipsum dolor sit amet.</dd>
-                    </dl>
-                    <dl class="contact-list">
-                        <dt>Email:</dt>
-                        <dd><a href="mailto:phongvu99@outlook.com">phongvu99@outlook.com</a></dd>
-                    </dl>
-                    <dl class="contact-list">
-                        <dt>Phones:</dt>
-                        <dd><a href="tel:#">blah blah blah</a> or <a href="tel:#">blah blah blah</a>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="col-md-4 col-lg-3">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contacts</a></li>
-                        <div class="mt-2" id="social-icons">
-                            <a href="https://www.facebook.com/" type="button" class="btn btn-outline-primary btn-lg"><i
-                                    class="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/" type="button" class="btn btn-outline-primary btn-lg"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://twitter.com/" type="button" class="btn btn-outline-primary btn-lg"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a href="https://www.youtube.com/" type="button" class="btn btn-outline-primary btn-lg"><i
-                                    class="fab fa-youtube"></i></a>
-                        </div>
-                    </ul>
-                </div>
-                <div class="w-100"></div>
-                <div class="col-lg border-top border-light pt-4">
-                    <p class="text-center"> © 2019 Fooradise. All Rights Reserved.</p>
-                </div>
-            </div>
+  </form> -->
+
+  <footer class="footer-classic text-white p-3">
+    <div class="container p-0">
+      <div class="row">
+        <div class="col-md-4 col-lg-5">
+          <div class="pr-xl-4">
+            <a href="#">
+              <img src="{{ url_for('static', filename = 'images/tasty.jpg') }}" alt="logo" width="160" height="auto">
+            </a>
+            <p>Look at me!</p>
+          </div>
         </div>
-    </footer>
-    <script>
-        // When the user scrolls the page, execute myFunction
-        window.onscroll = function () { myFunction() };
+        <div class="col-md-4">
+          <h5>Contacts</h5>
+          <dl class="contact-list">
+            <dt>Address:</dt>
+            <dd>Lorem ipsum dolor sit amet.</dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>Email:</dt>
+            <dd><a href="mailto:phongvu99@outlook.com">phongvu99@outlook.com</a></dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>Phones:</dt>
+            <dd><a href="tel:#">blah blah blah</a> or <a href="tel:#">blah blah blah</a>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <h5>Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacts</a></li>
+            <div class="mt-2" id="social-icons">
+              <a href="https://www.facebook.com/" type="button" class="btn btn-outline-primary btn-lg"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/" type="button" class="btn btn-outline-primary btn-lg"><i class="fab fa-instagram"></i></a>
+              <a href="https://twitter.com/" type="button" class="btn btn-outline-primary btn-lg"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.youtube.com/" type="button" class="btn btn-outline-primary btn-lg"><i class="fab fa-youtube"></i></a>
+            </div>
+          </ul>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-lg border-top border-light pt-4">
+          <p class="text-center"> © 2019 Fooradise. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {
+      myFunction()
+    };
 
-        // Get the navbar
-        var navbar = document.getElementById("sticky_navbar");
+    // Get the navbar
+    var navbar = document.getElementById("sticky_navbar");
 
-        // Get the offset position of the navbar
-        var sticky = navbar.offsetTop;
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
 
-        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("bg-nav")
-            } else {
-                navbar.classList.remove("bg-nav");
-            }
-        } </script>
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("bg-nav")
+      } else {
+        navbar.classList.remove("bg-nav");
+      }
+    }
+  </script>
 </body>
 
 </html>

@@ -23,8 +23,6 @@ db.init_app(app)
 
 
 # Set up database
-engine = create_engine(os.getenv("DATABASE_URL"))
-db = scoped_session(sessionmaker(bind=engine))
 
 
 @app.route("/")
@@ -67,3 +65,15 @@ def search_recipe():
         return redirect("/recipes/"+str(r.id))
     else:
         return ("Error: Invalid recipe")
+
+@app.route("/submit", methods = ["POST"])
+def submit():
+    name = request.form.get("name")
+    ingredients = request.form.get('ingredients')
+    steps = request.form.get('steps')
+    yields = request.form.get('yields')
+    url = request.form.get('url')
+    this_recipe = Recipe(name = name, ingredients = ingredients, steps = steps, yields = yields, url = url)
+    db.session.add(this_recipe)
+    db.session.commit()
+    return redirect("/recipes/"+str(this_recipe.id))
