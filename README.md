@@ -1,7 +1,6 @@
 # Fooradise - SE 2019
 <h2> Version: 0.5 (As of April 27, 2019).</h2>
-<h2>This is fooradise, a project that starts out as a part of our final exam of the course Software Engineering at our school.</h2>
-<br>
+
 <h3> How to use the project: </h3>
 http://fooradise-heroku.herokuapp.com/
 <h3> Features: </h3>
