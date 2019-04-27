@@ -21,7 +21,7 @@
 <body>
     <header>
         <div class="text-white" id="logo">
-            <img class="img-fluid" src="{{ url_for('static', filename = 'images/logo.png') }}" alt="fooradise logo">
+            LOGO HERE
         </div>
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-0" id="sticky_navbar">
@@ -39,22 +39,29 @@
                     for more informations: https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span class="sr-only">(recipes)</span></a>
+                    <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span
+                            class="sr-only">(recipes)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('submitRecipes') }}">
-                        SUBMIT RECIPES<span class="sr-only">(submit recipes)</span>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#submitModal">
+                        SUBMIT RECIPE
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">ABOUT US<span class="sr-only">(about)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT<span class="sr-only">(contact)</span></a>
+                    <a class="nav-link" href="#contact">CONTACT<span class="sr-only">(contact)</span></a>
                 </li>
             </ul>
-            <form class="form-inline mr-5">
-                <input class="form-control" type="search" placeholder="Recipes..." aria-label="Search">
+            <form class="form-inline mr-5" action="{{ url_for('search_recipe') }}" method="POST">
+                <input class="form-control mr-sm-2" type="search" placeholder="Recipes..." aria-label="Search"
+                    name="name" onchange="this.form.submit()" list="recipes_list">
+                <datalist id="recipes_list">
+                    {% for i in recipes_list %}
+                    <option value="{{ i.name }}"></option>
+                    {% endfor %}
+                </datalist>
             </form>
         </div>
     </nav>
@@ -68,24 +75,24 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img class="d-block w-100 carousel-img-fluid" src="../images/tasty.jpg" alt="Featured Image 1">
+                <img class="d-block w-100 carousel-img-fluid" src="{{random_recipes[0].url}}"
+                    alt="Featured Image 1">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 class="display-4">Featured Image 1</h2>
+                    <h2 class="display-4">{{random_recipes[0].name}}</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 carousel-img-fluid" src="../images/raspberry-2023404_1920.jpg"
-                    alt="Featured Image 2">
+                <img class="d-block w-100 carousel-img-fluid" src="{{random_recipes[1].url}}" alt="Featured Image 2">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 class="display-4">Featured Image 2</h2>
+                    <h2 class="display-4">{{random_recipes[1].name}}</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 carousel-img-fluid" src="../images/background2.jpg" alt="Featured Image 3">
+                <img class="d-block w-100 carousel-img-fluid" src="{{random_recipes[2].url}}" alt="Featured Image 3">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 class="display-4">Featured Image 3</h2>
+                    <h2 class="display-4">{{random_recipes[2].name}}</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
@@ -298,13 +305,89 @@
             </div>
         </div>
     </section>
+    <form action="{{ url_for('submit') }}" method="post">
+        <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Submit Recipe!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="name">Recipe Name</label>
+                                        <input type="text" class="form-control" id="name"
+                                            placeholder="Classic Mac and Cheese" name="name">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="difficulty">Difficulty</label>
+                                        <select id="difficulty" class="form-control" name="difficulty">
+                                            <option selected>Easy</option>
+                                            <option>Medium</option>
+                                            <option>Hard</option>
+                                            <option>Dark Souls</option>
+                                            <option>Sekiro</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="yields">Servings</label>
+                                        <select id="yields" class="form-control" name="yields">
+                                            <option selected value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="More than 4">More than 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="ingredients">Ingredients</label>
+                                        <textarea class="form-control" name="ingredients" id="ingredients" cols="10"
+                                            rows="5"
+                                            placeholder="Tomatoes, ricotta, parmesan, cheddar cheese,..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="steps">Instructions</label>
+                                        <textarea class="form-control" name="steps" id="steps" cols="30" rows="10"
+                                            placeholder="This is how you make a classic lasagna!"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <input type="text" class="form-control" id="uploadImage" placeholder="Image URL"
+                                            name="url">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-outline-primary">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     <footer class="footer-classic text-white p-3">
-        <div class="container p-0">
+        <div class="container p-0" id="contact">
             <div class="row">
                 <div class="col-md-4 col-lg-5">
                     <div class="pr-xl-4">
                         <a href="#">
-                            <img src="{{ url_for('static', filename = 'images/tasty.jpg') }}" alt="logo" width="160" height="auto">
+                            <img src="{{ url_for('static', filename = 'images/tasty.jpg') }}" alt="logo" width="160"
+                                height="auto">
                         </a>
                         <p>Look at me!</p>
                     </div>

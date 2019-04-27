@@ -21,7 +21,7 @@
 <body>
     <header>
         <div class="text-white" id="logo">
-            <img class="img-fluid" src="{{ url_for('static', filename = 'images/logo.png') }}" alt="fooradise logo">
+            LOGO HERE
         </div>
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-0" id="sticky_navbar">
@@ -39,22 +39,29 @@
                     for more informations: https://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3-->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span class="sr-only">(recipes)</span></a>
+                    <a class="nav-link" href="{{ url_for('recipes') }}">RECIPES<span
+                            class="sr-only">(recipes)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('submitRecipes') }}">
-                        SUBMIT RECIPES<span class="sr-only">(submit recipes)</span>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#submitModal">
+                        SUBMIT RECIPE
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">ABOUT US<span class="sr-only">(about)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT<span class="sr-only">(contact)</span></a>
+                    <a class="nav-link" href="#contact">CONTACT<span class="sr-only">(contact)</span></a>
                 </li>
             </ul>
-            <form class="form-inline mr-5">
-                <input class="form-control mr-sm-2" type="search" placeholder="Recipes..." aria-label="Search">
+            <form class="form-inline mr-5" action="{{ url_for('search_recipe') }}" method="POST">
+                <input class="form-control mr-sm-2" type="search" placeholder="Recipes..." aria-label="Search"
+                    name="name" onchange="this.form.submit()" list="recipes_list">
+                <datalist id="recipes_list">
+                    {% for i in recipes_list %}
+                    <option value="{{ i.name }}"></option>
+                    {% endfor %}
+                </datalist>
             </form>
         </div>
     </nav>
@@ -68,15 +75,14 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <img class="d-block w-100 carousel-img-fluid" src="{{ this_recipe.url }}" alt="{{random_recipes[0].name}}">
+                <img class="d-block w-100 carousel-img-fluid" src="{{ this_recipe.url }}" alt="Featured Image 1">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">{{this_recipe.name}}</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 carousel-img-fluid" src="{{random_recipes[1].url}}"
-                    alt="Featured Image 2">
+                <img class="d-block w-100 carousel-img-fluid" src="{{random_recipes[1].url}}" alt="Featured Image 2">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">{{random_recipes[1].name}}</h2>
                     <p class="lead">Lorem ipsum dolor sit amet.</p>
@@ -104,7 +110,8 @@
         <div class="content container text-white border-top border-primary my-5 p-3">
             <div class="lead display-4" id="recipe_title">{{this_recipe.name}}</div>
             <div class="my-3" id="editor">
-                <img class="img-fluid d-inline" src="{{ url_for('static', filename = 'images/Lego.jpg') }}" alt="editor" id="editor-icon">
+                <img class="img-fluid d-inline" src="{{ url_for('static', filename = 'images/Lego.jpg') }}" alt="editor"
+                    id="editor-icon">
                 <span class="display-5 ml-2" id="author">by Phong</span>
                 <span class="text-muted ml-1" id="date">April 15, 2019</span>
             </div>
@@ -112,14 +119,19 @@
                 <div class="col-lg lead text-justify-sm">
                     <p class="display-4">Ingredients</p>
                     <ul class="list-unstyled">
-                      {% for i in this_steps %}
-                      <li>{{ i }}</li>
-                      {% endfor %}
+                        {% for i in this_ingredients %}
+                        <li>{{ i }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="col-lg lead text-justify-sm">
                     <p class="display-4">Directions</p>
-                    {{ this_recipe.steps }}
+                    <ul class="list-unstyled">
+                        {% for i in this_steps %}
+                        <li>{{ i }}</li>
+                        {% endfor %}
+                    </ul>
+                    <!-- {{ this_recipe.steps }} -->
                 </div>
             </div>
         </div>
@@ -164,10 +176,11 @@
                         </div>
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">Romantic Chicken Dinner for Two</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, sunt.</p>
-                        <a href="https://tasty.co/compilation/romantic-chicken-dinner-for-two"
-                            class="btn btn-outline-light">Do it now!</a>
+                        <a href="https://tasty.co/compilation/romantic-chicken-dinner-for-two" class="text-white">
+                            <h5 class="card-title">Romantic Chicken Dinner for Two</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, sunt.
+                            </p>
+                        </a>
                     </div>
                     <div class="card-footer">
                         <small>by Matthew Johnson</small>
@@ -182,10 +195,11 @@
                         </div>
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">Chow Mein 4 Ways</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, ab!.</p>
-                        <a href="https://tasty.co/compilation/chow-mein-4-ways" class="btn btn-outline-light">Do it
-                            now!</a>
+                        <a href="https://tasty.co/compilation/chow-mein-4-ways" class="text-white">
+                            <h5 class="card-title">Chow Mein 4 Ways</h5>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi, ab!.
+                            </p>
+                        </a>
                     </div>
                     <div class="card-footer">
                         <small>by Claire Nolan</small>
@@ -200,11 +214,10 @@
                         </div>
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">4 Easy Instant Pot Dinners</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, rem?</p>
-                        <a href="https://tasty.co/compilation/4-easy-instant-pot-dinners"
-                            class="btn btn-outline-light">Do
-                            it now!</a>
+                        <a href="https://tasty.co/compilation/4-easy-instant-pot-dinners" class="text-white">
+                            <h5 class="card-title">4 Easy Instant Pot Dinners</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, rem?</p>
+                        </a>
                     </div>
                     <div class="card-footer">
                         <small>by Tiffany Lo</small>
@@ -222,12 +235,12 @@
                         </div>
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">Veggie Rice 4 Ways</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia,
-                            assumenda.
-                        </p>
-                        <a href="https://tasty.co/compilation/veggie-rice-4-ways" class="btn btn-outline-light">Do it
-                            now!</a>
+                        <a href="https://tasty.co/compilation/veggie-rice-4-ways" class="text-white">
+                            <h5 class="card-title">Veggie Rice 4 Ways</h5>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia,
+                                assumenda.
+                            </p>
+                        </a>
                     </div>
                     <div class="card-footer">
                         <small>by Crystal Hatch</small>
@@ -242,11 +255,12 @@
                         </div>
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">Time-Saving Sheet Pan Pancakes</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, eius.
-                        </p>
-                        <a href="https://tasty.co/compilation/time-saving-sheet-pan-pancakes"
-                            class="btn btn-outline-light">Do it now!</a>
+                        <a href="https://tasty.co/compilation/time-saving-sheet-pan-pancakes" class="text-white">
+                            <h5 class="card-title">Time-Saving Sheet Pan Pancakes</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
+                                eius.
+                            </p>
+                        </a>
                     </div>
                     <div class="card-footer">
                         <small>by Claire Nolan</small>
@@ -261,12 +275,12 @@
                         </div>
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">6 Insanely Easy Fruit Cobblers</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
-                            repudiandae.
-                        </p>
-                        <a href="https://tasty.co/compilation/6-insanely-easy-fruit-cobblers"
-                            class="btn btn-outline-light">Do it now!</a>
+                        <a href="https://tasty.co/compilation/6-insanely-easy-fruit-cobblers" class="text-white">
+                            <h5 class="card-title">6 Insanely Easy Fruit Cobblers</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+                                repudiandae.
+                            </p>
+                        </a>
                     </div>
                     <div class="card-footer">
                         <small>by Teddy Villa</small>
@@ -275,13 +289,89 @@
             </div>
         </div>
     </section>
+    <form action="{{ url_for('submit') }}" method="post">
+        <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Submit Recipe!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="name">Recipe Name</label>
+                                        <input type="text" class="form-control" id="name"
+                                            placeholder="Classic Mac and Cheese" name="name">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="difficulty">Difficulty</label>
+                                        <select id="difficulty" class="form-control" name="difficulty">
+                                            <option selected>Easy</option>
+                                            <option>Medium</option>
+                                            <option>Hard</option>
+                                            <option>Dark Souls</option>
+                                            <option>Sekiro</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="yields">Servings</label>
+                                        <select id="yields" class="form-control" name="yields">
+                                            <option selected value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="More than 4">More than 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="ingredients">Ingredients</label>
+                                        <textarea class="form-control" name="ingredients" id="ingredients" cols="10"
+                                            rows="5"
+                                            placeholder="Tomatoes, ricotta, parmesan, cheddar cheese,..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="steps">Instructions</label>
+                                        <textarea class="form-control" name="steps" id="steps" cols="30" rows="10"
+                                            placeholder="This is how you make a classic lasagna!"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <input type="text" class="form-control" id="uploadImage" placeholder="Image URL"
+                                            name="url">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-outline-primary">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     <footer class="footer-classic text-white p-3">
-        <div class="container p-0">
+        <div class="container p-0" id="contact">
             <div class="row">
                 <div class="col-md-4 col-lg-5">
                     <div class="pr-xl-4">
                         <a href="#">
-                            <img src="{{ url_for('static', filename = 'images/tasty.jpg') }}" alt="logo" width="160" height="auto">
+                            <img src="{{ url_for('static', filename = 'images/tasty.jpg') }}" alt="logo" width="160"
+                                height="auto">
                         </a>
                         <p>Look at me!</p>
                     </div>
