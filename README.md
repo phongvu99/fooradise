@@ -2,7 +2,7 @@
 <h2> Version: 0.5 (As of April 27, 2019).</h2>
 
 <h3> How to use the project: </h3>
-http://fooradise-heroku.herokuapp.com/
+http://fooradise.herokuapp.com/
 <h3> Features: </h3>
 <ul>
   <li> Mobile compatible! </li>
